@@ -1,0 +1,146 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@model IEnumerable<biletcoo.Models.Event>
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@{
+    ViewData["Title"] = "Admin View All Events Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>  @ViewData["Title"]-Biletco</title>
+    <link rel="stylesheet" href="~/css/AdminPage.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Admin" asp-action="Index"><h1>Biletco</h1></a>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by event name" onkeyup="searchEvent()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-header">
+            <ul>
+                <li><p style="color: white; text-align: center;"><strong>Welcome @name </strong></p></li>
+                <li>
+                    <a asp-controller="Admin" asp-action="AdminFullEvents" id="header-button">View Full Events</a>
+                </li>
+                <li><a asp-controller="Home" asp-action="Index" id="logout">Log Out</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="category">
+        <ul>
+            <div class="wrap">
+                <i class="fa-solid fa-eye"></i>
+            <li>
+                <select id="category" name="category" onchange="filterByCategoryAndCity()">
+                    <option value="">Select a category</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Workshop">Workshop</option>
+                </select>
+            </li>
+    </div>
+    <div class="wrap">
+        <i class="fa-solid fa-location-dot"></i>
+        <li>
+            <select id="city_sb" name="city_sb" class="discoverbar__select" onchange="filterByCategoryAndCity()">
+                <option selected="selected" value="">Select a place</option>
+                        @if (ViewData["Locations"] != null)
+                        {
+                            foreach (var location in (List<string>)ViewData["Locations"])
+                            {
+                        <option value="@location">@location</option>
+                            }
+                        }
+            </select>
+        </li>
+    </div>
+    </ul>
+    </div>
+
+    <main>
+        <table style="margin-top:0px" class="event-table" id="eventTable">
+            <thead>
+                <tr>
+                    <th style="font-size:1.5rem;" colspan="5">Full Event List</th>
+                </tr>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var eventItem in Model)
+                {
+                    <tr class="event-row"
+                        data-category="@eventItem.category"
+                        data-location="@eventItem.Location">
+                        <td>@eventItem.Name</td>
+                        <td>@eventItem.Location</td>
+                        <td>@eventItem.date.ToString("dd-MM-yyyy")</td>
+                        <td>@eventItem.category</td>
+                        <td class="@(eventItem.Status.ToLower())">@eventItem.Status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </main>
+
+    <script>
+      function searchEvent() {
+            var searchValue = document.getElementById("search").value.toLowerCase();
+            var rows = document.querySelectorAll(".event-row");
+            rows.forEach(function (row) {
+                var eventName = row.cells[0].textContent.toLowerCase();
+
+                if (eventName.includes(searchValue)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+
+    <script>
+
+      function filterByCategoryAndCity() {
+            var selectedCategory = document.getElementById("category").value.toLowerCase();
+            var selectedLocation = document.getElementById("city_sb").value.toLowerCase();
+            var rows = document.querySelectorAll(".event-row");
+            rows.forEach(function (row) {
+                var rowCategory = row.getAttribute("data-category").toLowerCase();
+                var rowLocation = row.getAttribute("data-location").toLowerCase();
+                var categoryMatch = !selectedCategory || rowCategory === selectedCategory;
+                var locationMatch = !selectedLocation || rowLocation === selectedLocation;
+
+                if (categoryMatch && locationMatch) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

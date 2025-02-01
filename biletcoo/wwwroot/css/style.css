@@ -1,0 +1,382 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+    font-family: "Booter - Zero Zero";
+    src: url("Booter\ -\ Zero\ Zero.woff") format("woff"), url("Booter\ -\ Zero\ Zero.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+header {
+    background-color: #0092ff;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.right-header {
+    display: flex;
+}
+
+    .right-header ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-header li {
+        padding: 0px 10px;
+    }
+
+    .right-header a {
+        font-size: 1.3em;
+        color: white;
+        transition: 0.5s;
+    }
+
+    .right-header li a:hover {
+        color: rgb(122, 122, 122);
+        transition: 0.5s;
+        font-size: 1.4em;
+    }
+
+    .right-header button {
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 1em;
+        color: #0092ff;
+        transition: 0.5s;
+    }
+
+        .right-header button:hover {
+            font-size: 1.1em;
+            transition: 0.5s;
+        }
+
+header h1 {
+    font-size: 6em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+}
+
+#header-button {
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    color: #0092ff;
+    font-size: 1em;
+    transition: 0.5s;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+    #header-button:hover {
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+.container {
+    text-align: center;
+    border-style: dashed;
+    border-radius: 20px;
+    margin: 0px 30vw;
+    margin-top: 10vh;
+    padding: 1em;
+}
+
+    .container h1 {
+        font-size: 1.6em;
+    }
+
+.kutular {
+    padding-top: 8em;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.kutu {
+    background-color: #0092ff;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .kutu a {
+        font-size: 1.7em;
+        color: white;
+    }
+
+    .kutu:hover {
+        background-color: #0091ff87;
+        font-size: 1.1em;
+        transition: 0.5s;
+    }
+
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm label {
+    font-size: 1.5em;
+    color: rgb(0, 146, 255);
+}
+
+.input-wrap input {
+    border-radius: 10px;
+    padding: 10px;
+   
+}
+
+.input-wrap i {
+    padding-right: 15px;
+}
+
+form button {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.3em;
+    color: #0092ff;
+    transition: 0.5s;
+}
+
+    form button:hover {
+        font-size: 1.5em;
+        transition: 0.5s;
+    }
+
+.input-wrap i {
+    position: relative;
+    left: 120px;
+    bottom: 35px;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 0px rgba(0, 146, 255, 1);
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    }
+}
+.green {
+    animation: pulse-animation2 2s infinite;
+}
+@keyframes pulse-animation2 {
+    0% {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px 0px #006600;
+    }
+
+    100% {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    }
+}
+
+.wid input {
+    width: 20vw;
+    font-size: 0.9em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+#logout {
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    color: #0092ff;
+    font-size: 1em;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+    #logout:hover {
+        background-color: darkred;
+        color: white;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+.text-danger{
+    font-size:0.8rem;
+    color:red;
+}
+
+
+@media (max-width: 1000px) {
+
+    * {
+        font-size: 15px;
+    }
+
+    header {
+        padding: 0px 20px;
+    }
+
+    .right-header li {
+        padding: 0px 7px;
+    }
+
+    .right-header a {
+        font-size: 1.3em;
+    }
+
+    header h1 {
+        margin: 0px 7px 0px 7px;
+    }
+
+    .category {
+        margin-bottom: 20px;
+    }
+
+    .right-header button {
+        padding: 7px;
+    }
+
+    #search {
+        width: 25vw;
+        padding: 10px;
+        padding-right: 30px;
+        font-size: 13px;
+    }
+
+    .input-wrap i {
+        left: 100px;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 750px) {
+
+    * {
+        font-size: 13px;
+    }
+
+    header {
+        padding: 0px 10px;
+    }
+
+    .right-header li {
+        padding: 0px 5px;
+    }
+
+    header h1 {
+        margin: 0px 7px 0px 7px;
+    }
+
+    .category {
+        margin-bottom: 15px;
+    }
+
+    .right-header button {
+        padding: 7px;
+    }
+
+    main {
+        margin: 0px 10px 0px 10px;
+    }
+
+    .img img {
+        width: 300px;
+    }
+
+    .input-wrap i {
+        left: 90px;
+        bottom: 27px;
+    }
+
+    .kutu {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 620px) {
+    * {
+        font-size: 10px;
+    }
+
+    .img img {
+        width: 250px;
+    }
+
+    .input-wrap i {
+        left: 77px;
+        bottom: 21px;
+    }
+}

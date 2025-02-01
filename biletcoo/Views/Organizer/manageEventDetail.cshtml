@@ -1,0 +1,129 @@
+@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@using biletcoo.ViewModel;
+@model EventViewModel;
+
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@{
+    ViewData["Title"] = "Manage Event Detail Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A template project for HTML CSS" />
+    <meta name="author" content="Emir Sapmaz" />
+    <title>@ViewData["Title"] - Biletco</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        header {
+            background-color: #006600;
+        }
+
+        .event-details .btn-div button {
+            color: #006600;
+        }
+
+        .right-header button {
+            color: #006600;
+        }
+
+        .category {
+            background-color: #006600;
+        }
+
+        select {
+            color: #006600;
+        }
+
+            select option {
+                color: #006600;
+            }
+
+        #logout {
+            color: #006600;
+        }
+
+        #header-button {
+            color: #006600;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <a asp-controller="Organizer" asp-action="Index"><h1>Biletco</h1></a>
+      <div class="right-header">
+        <ul>
+                <li>
+                    <p style="color: white"><strong>Welcome @name</strong></p>
+                </li>
+          <li>
+                <a type="button" asp-controller="Organizer" asp-action="CreateEvent" id="header-button">Create Event</a>
+          </li>
+                <li><a type="button" asp-controller="Organizer" asp-action="ManageEvent" id="header-button">Manage Event</a></li>
+                <li><a asp-controller="Home" asp-action="Index" id="logout">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="container" style="margin-top: 2vh">
+        <form asp-action="UpdateEvent" asp-controller="Organizer" id="eventForm" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="input-wrap wid">
+                <label asp-for="Name">Event Name</label>
+                <input type="text" id="eventName" asp-for="Name" placeholder="Enter the event name" required>
+            </div>
+            <div class="input-wrap wid">
+                <label asp-for="Location">Event Location</label>
+                <input type="text" id="eventLocation" asp-for="Location" placeholder="Enter event location" required>
+            </div>
+            <div class="input-wrap wid">
+                <label asp-for="date">Event Date</label>
+                <input type="date" id="eventDate" asp-for="date" placeholder="Enter event date" required>
+            </div>
+            <div class="input-wrap wid">
+                <label asp-for="capacity">Capacity</label>
+                <input type="number" id="capacity" asp-for="capacity" required min="1" placeholder="Enter event capacity" required>
+            </div>
+            <div class="input-wrap wid">
+                <label asp-for="price">Price</label>
+                <input type="number" id="price" asp-for="price" required min="0" placeholder="Enter the price">
+            </div>
+            <div class="input-wrap ">
+                <label asp-for="category">Category</label>
+                <select id="category" asp-for="category" style="padding: 10px; margin-top:10px ; width: 20vw;" required>
+                    <option value="">Select a category</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Workshop">Workshop</option>
+                </select>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="Description">Event Description</label>
+                <textarea style="width: 20vw; padding: 10px; font-size: 0.9em;" id="eventDescription" asp-for="Description" required placeholder="Enter a event description"></textarea>
+            </div>
+            <br>
+        <br />
+        <button class="pulse" onclick=showModal() type="submit">Update Event</button>
+      </form>
+    </div>
+    
+   
+
+  </body>
+</html>

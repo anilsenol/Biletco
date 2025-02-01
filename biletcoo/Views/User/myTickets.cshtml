@@ -1,0 +1,148 @@
+@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@model IEnumerable<biletcoo.Models.Ticket>
+@{
+    ViewData["Title"] = "My Tickets Events Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biletco</title>
+    <link rel="stylesheet" href="~/css/myTickets.css" asp-append-version="true" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Main"><h1>Biletco</h1></a>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by event name" onkeyup="searchEvent()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-header">
+            <ul>
+                <li><p style="color: white; text-align: center;"><strong>Welcome @name</strong></p></li>
+                <li><a asp-controller="User" asp-action="myTickets" id="header-button">My Tickets</a></li>
+                <li><a asp-controller="User" asp-action="favouriteEvent" id="header-button">Favourite Events</a></li>
+                <li><a asp-controller="Account" asp-action="Logout" id="logout">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class ="table-container">
+        @{
+            if (@TempData["message"] != null)
+            {
+                <div class="config" id="configPopup">
+                    <h2 style="color:@TempData["color"]">
+                        @TempData["message"]
+                    </h2>
+                </div>
+            }
+        }
+        <table class="active-event-table">
+            <thead>
+                <tr>
+                    <th colspan="3">Active Tickets</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th style="background-color: #2b8600;">Event Name</th>
+                    <th style="background-color: #2b8600;">Ticket Number</th>
+                    <th style="background-color: #2b8600;">Status</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tickets in Model)
+                {
+                    if (tickets.MyEvent.Status == "Active")
+                    {
+                    <tr class="row">
+                    <td>@tickets.MyEvent.Name</td> 
+                    <td>@tickets.ticketNumber</td>
+                    <td>@tickets.MyEvent.Status</td>
+
+                    </tr>
+                    }
+            }
+        </tbody>
+    </table>
+    </div>
+
+    <div class="table-container">
+        <table class="expired-event-table">
+            <thead>
+                <tr>
+                    <th colspan="3">Expired Tickets</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th style="background-color: red;">Event Name</th>
+                    <th style="background-color: red;">Ticket Number</th>
+                    <th style="background-color: red;">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var tickets in Model)
+                {
+                    if (tickets.MyEvent.Status == "Expired")
+                    {
+                        <tr class="row">
+                            <td>@tickets.MyEvent.Name</td>
+                            <td>@tickets.ticketNumber</td>
+                            <td>@tickets.MyEvent.Status</td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var configPopup = document.getElementById("configPopup");
+                if (configPopup) {
+                    configPopup.style.display = "none";
+                }
+            }, 1500);
+
+        });
+    </script>
+
+    <script>
+        function searchEvent() {
+              var searchValue = document.getElementById("search").value.toLowerCase();
+              var rows = document.querySelectorAll(".row");
+              rows.forEach(function (row) {
+                  var eventName = row.cells[0].textContent.toLowerCase();
+
+                  if (eventName.includes(searchValue)) {
+                      row.style.display = "";
+                  } else {
+                      row.style.display = "none";
+                  }
+              });
+          }
+
+    </script>
+
+</body>
+</html>

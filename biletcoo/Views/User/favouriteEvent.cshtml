@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@model IEnumerable<biletcoo.Models.Event>
+@{
+    ViewData["Title"] = "Favourite Events Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biletco</title>
+    <link rel="stylesheet" href="~/css/favourites.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Main"><h1>Biletco</h1></a>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by event name" onkeyup="searchEvent()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-header">
+            <ul>
+                <li><p style="color: white; text-align: center;"><strong>Welcome @name </strong></p></li>
+                <li><a asp-controller="User" asp-action="myTickets" id="header-button">My Tickets</a></li>
+                <li><a asp-controller="User" asp-action="favouriteEvent" id="header-button">Favourite Events</a></li>
+                <li><a asp-controller="Account" asp-action="Logout" id="logout">Logout</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <body>
+
+        <table class="favourite-event-table">
+            <thead>
+                <tr>
+                    <th colspan="2">Favourite Tickets</th>
+
+                </tr>
+                <tr>
+                    <th style="background-color: #bcaf00;">Event Name</th>
+                    <th style="background-color: #bcaf00;">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                 if(Model.Any()){
+                    @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    <a style="font-weight:bold; color:black; text-decoration:underline" asp-controller="User" asp-action="EventDetails" 
+                                    asp-route-eventId="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </td>
+                            </tr>
+                            }
+                    }else{
+                        <tr>
+                            <td colspan="2" style="text-align: center;">No favourite events found.</td>
+                        </tr>
+                    }
+
+                    }
+            </tbody>
+        </table>
+
+    </body>
+</body>
+</html>

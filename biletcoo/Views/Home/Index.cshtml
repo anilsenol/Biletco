@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <meta name="description" content="A template project for HTML CSS" />
+    <meta name="author" content="Emir Sapmaz" />
+    <title>@ViewData["Title"] - Biletco</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index"><h1>Biletco</h1></a>
+        <div class="right-header">
+            <ul>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to our page!</h1>
+        <br>
+        <hr>
+        <div class="kutular">
+            <p>This is a adaptation of the website called biletix.com by Emir Sapmaz, Anıl Şenol and Kaan Ozgan</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

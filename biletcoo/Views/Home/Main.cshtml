@@ -1,0 +1,173 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@model IEnumerable<biletcoo.Models.Event>
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@{
+    ViewData["Title"] = "Main Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Biletco</title>
+    <link rel="stylesheet" href="~/css/MainPage.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Main"><h1>Biletco</h1></a>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by event name" onkeyup="searchEvent()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-header">
+            <ul>
+                <li><p style="color: white; text-align: center;"><strong>Welcome @name </strong></p></li>
+                <li><a asp-controller="User" asp-action="myTickets" id="header-button">My Tickets</a></li>
+                <li><a asp-controller="User" asp-action="favouriteEvent" id="header-button">Favourite Events</a></li>
+                <li><a asp-controller="Account" asp-action="Logout" id="logout">Logout</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <div class="category">
+        <ul>
+            <div class="wrap">
+                <i class="fa-solid fa-eye"></i>
+            <li>
+                <select id="category" name="category" onchange="filterByCategoryAndCity()">
+                    <option value="">Select a category</option>
+                    <option value="Music">Music</option>
+                    <option value="Art">Art</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Workshop">Workshop</option>
+                </select>
+            </li>
+    </div>
+    <div class="wrap">
+        <i class="fa-solid fa-location-dot"></i>
+        <li>
+            <select id="city_sb" name="city_sb" class="discoverbar__select" onchange="filterByCategoryAndCity()">
+                <option selected="selected" value="-1">Select a place</option>
+                        @if (ViewData["Locations"] != null)
+                        {
+                            foreach (var location in (List<string>)ViewData["Locations"])
+                            {
+                        <option value="@location">@location</option>
+                            }
+                        }
+            </select>
+
+
+        </li>
+    </div>
+    </ul>
+    </div>
+    <main>
+        @{
+            if (Model.Any())
+            {
+                bool hasActiveEvents = Model.Any(e => e.Status == "Active");
+
+                if (hasActiveEvents)
+                {
+                    foreach (var Event in Model)
+                    {
+                        if (Event.Status == "Active")
+                        {
+                            <div class="event-container" data-event-name="@Event.Name.ToLower()" data-event-city="@Event.Location"
+                                 data-event-category="@Event.category">
+                                <div class="img">
+                                    <img src="~/img/konser.jpg" alt="Concert" />
+                                </div>
+                                <div class="event-details">
+                                    <h2>@Event.Name</h2>
+                                    <p>@Event.Description</p>
+                                    <div class="btn-div">
+                                        <a id="header-button" asp-controller="User" asp-action="EventDetails" asp-route-eventId="@Event.Id">Event Details</a>
+                                    </div>
+                                </div>
+                                <a asp-controller="User" asp-action="ToggleFavorite" asp-route-eventId="@Event.Id" class="favorite-link" data-event-id="@Event.Id">
+                                    <i id="favoriteButton-@Event.Id" class="@(ViewData["Favorites"] != null && ((List<int>)ViewData["Favorites"]).Contains(Event.Id) ? "fa-solid" : "fa-regular") fa-star favoriteButton"
+                                       style="color:@(ViewData["Favorites"] != null && ((List<int>)ViewData["Favorites"]).Contains(Event.Id) ? "#ffee00" : "black")"></i>
+                                </a>
+
+                            </div>
+                        }
+                    }
+                }
+                else   // No active events
+                {
+                    <div class="event-container" style="display:block;">
+                        <p style="color:red;padding:5px;font-size:1.2rem; font-weight:bold; text-align:center;">No active event created yet!</p>
+                    </div>
+                }
+            }
+            else// No events in the model
+            {
+                <div class="event-container" style="display:block;">
+                    <p style="color:red;padding:5px;font-size:1.2rem; font-weight:bold; text-align:center;">No event created yet!</p>
+                </div>
+            }
+        }
+
+    </main>
+
+    <script>
+        function searchEvent() {
+
+            const searchTerm = document.getElementById("search").value.toLowerCase();
+
+
+            const eventContainers = document.querySelectorAll(".event-container");
+
+
+            eventContainers.forEach(container => {
+
+                const eventName = container.getAttribute("data-event-name");
+
+
+                if (eventName.includes(searchTerm)) {
+
+                    container.style.display = "";
+                } else {
+
+                    container.style.display = "none";
+                }
+            });
+        }
+    </script>
+    <script>
+        function filterByCategoryAndCity() {
+            const selectedCategory = document.getElementById("category").value.toLowerCase();
+            const selectedCity = document.getElementById("city_sb").value.toLowerCase();
+            const eventContainers = document.querySelectorAll(".event-container");
+
+            eventContainers.forEach(container => {
+                const eventCategory = container.getAttribute("data-event-category").toLowerCase();
+                const eventCity = container.getAttribute("data-event-city").toLowerCase();
+
+                const matchesCategory = selectedCategory === "" || eventCategory === selectedCategory;
+                const matchesCity = selectedCity === "-1" || eventCity === selectedCity;
+
+                if (matchesCategory && matchesCity) {
+                    container.style.display = "";
+                } else {
+                    container.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+
+</body>
+</html>
