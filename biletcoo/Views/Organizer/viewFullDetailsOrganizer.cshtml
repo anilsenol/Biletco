@@ -1,0 +1,161 @@
+@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@model biletcoo.Models.Event
+
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+@{
+    ViewData["Title"] = "View Full Details Organizer Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Biletco</title>
+    <link rel="stylesheet" href="~/css/DetailsPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        header {
+            background-color: #006600;
+        }
+
+        .event-details .btn-div button {
+            color: #006600;
+        }
+
+        .right-header button {
+            color: #006600;
+        }
+
+        .category {
+            background-color: #006600;
+        }
+
+        select {
+            color: #006600;
+        }
+
+        .event-table thead {
+            background-color: #006600;
+        }
+            select option {
+                color: #006600;
+            }
+
+        #logout {
+            color: #006600;
+        }
+
+        #header-button {
+            color: #006600;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <a asp-controller="Organizer" asp-action="Index"><h1>Biletco</h1></a>
+      <div class="search-container">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by event name"
+          onkeyup="searchEvent()"
+        />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="right-header">
+        <ul>
+          <li>
+            <p style="color: white; text-align: center;"><strong>Welcome @name</strong></p>
+          </li>
+                <li><a type="button" asp-controller="Organizer" asp-action="CreateEvent" id="header-button">Create Event</a></li>
+                <li><a type="button" asp-controller="Organizer" asp-action="ManageEvent" id="header-button">Manage Event</a></li>
+                <li><a asp-controller="Home" asp-action="Index" id="logout">Logout</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="image-container">
+            <img src="~/img/konser.jpg" alt="Concert" />
+      </div>
+
+        <div class="event-container">
+            <div class="event-details">
+                @{
+
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Event Name: </h1>
+                        <span>@Model.Name</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <h1 style="display: inline;">Location: </h1>
+                        <span>@Model.Location</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <h1 style="display: inline;">Date: </h1>
+                        <span>@Model.date.ToString("dd.MM.yyyy")</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Category: </h1>
+                        <span>@Model.category</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Capacity: </h1>
+                        <span>@Model.capacity</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Description: </h1>
+                        <span>@Model.Description</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="category">Category</label>
+                            <select id="category" name="category">
+                                <option value="general">General</option>
+
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="ticket-number">Number of Tickets</label>
+                            <input id="ticket-number" type="number" min="1" value="1" />
+                        </div>
+                    </div>
+
+                    <p><strong>Price:</strong> <span id="price">@Model.price</span> TL</p>
+                    <input type="hidden" id="eventId" value="@Model.Id" />
+
+                    <button class="btn" >You need to login as User to buy ticket</button>
+
+                }
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+      const ticketPrice = 100;
+
+      const ticketInput = document.getElementById("ticket-number");
+      const priceDisplay = document.getElementById("price");
+
+      ticketInput.addEventListener("input", () => {
+        const ticketCount = ticketInput.value;
+        const totalPrice = ticketCount * ticketPrice;
+        priceDisplay.textContent = totalPrice;
+      });
+    </script>
+  </body>
+</html>

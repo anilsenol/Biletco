@@ -1,0 +1,151 @@
+﻿@{
+    ViewData["Title"] = "Register Page";
+    Layout = null;
+   
+}
+@using biletcoo.ViewModel;
+@model RegisterViewModel;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,, initial-scale=1.0">
+    <meta name="description" content="A template project for HTML CSS" />
+    <meta name="author" content="Emir Sapmaz" />
+    <title>@ViewData["Title"] - Biletco</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index"><h1>Biletco</h1></a>
+        <div class="right-header">
+            <ul>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container" style="margin-top: 2vh;">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="input-wrap">
+                <label asp-for="role">Are you user or organizer</label>
+                <select id="role" asp-for="role">
+                    <option selected value="User">User</option>
+                    <option value="Organizer">Organizer</option>
+                </select>               
+                <span asp-validation-for="role" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="FirstName">First name</label>
+                <input type="text" id="firstname" asp-for="FirstName" placeholder="Enter your first name" >
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="LastName">Last name</label>
+                <input type="text" id="lastname" asp-for="LastName" placeholder="Enter your last name" >
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="email">Email</label>
+                <input type="email" id="email" asp-for="email" placeholder="Enter your email" >
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="password">Password</label>
+                <input type="password" id="password" asp-for="password" placeholder="Enter your password" >
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="gender">Gender</label>
+                <div>
+                    <input style="width: auto;" type="radio" id="gender" asp-for="gender" value="Male"> Male
+                </div>
+                <div>
+                    <input style="width: auto;" type="radio" id="gender" asp-for="gender" value="Female"> Female
+                </div>
+                <span asp-validation-for="gender" class="text-danger"></span>
+            </div>
+            <div class="input-wrap" id="organizerInput" style="display: none;">
+                <label asp-for="tax">Tax number</label>
+                <input type="text" id="tax" asp-for="tax" placeholder="Enter your tax number">
+            </div>
+            <div class="input-wrap">
+                <label asp-for="date">Birth Date</label>
+                <input type="date" id="date" asp-for="date">
+                <span asp-validation-for="date" class="text-danger"></span>
+            </div>
+            <br>
+            <button class="pulse" type="submit">Register</button>
+        </form>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <h2 id="popupMessage" style="color: green;"></h2>
+            <span style="cursor:pointer" id="closeBtn">&times;</span>
+        
+        </div>
+    </div>
+
+    <script>
+        
+        function showModal(message) {
+            const modal = document.getElementById('registerModal');
+            const messageSpan = document.getElementById('popupMessage');
+            if (messageSpan) {
+                messageSpan.textContent = message;
+            }
+            modal.style.display = 'block';
+        }
+
+        
+        function closeModal() {
+            const modal = document.getElementById('registerModal');
+            modal.style.display = 'none';
+            window.location.href = '@Url.Action("Login", "Account")';
+        }
+
+        
+        const closeBtn = document.getElementById('closeBtn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+    </script>
+
+    
+    @if (TempData["ShowRegisterPopup"] != null && (bool)TempData["ShowRegisterPopup"])
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                showModal("@TempData["PopupMessage"]");
+            });
+        </script>
+    }
+
+    <script>
+        function toggleInputArea() { //if organizerInput is selected tax form comes up
+        const role = document.getElementById("role").value;
+        const organizerInput = document.getElementById("organizerInput");
+
+        if (organizerInput) {
+        if (role === "Organizer") {
+        organizerInput.style.display = "flex";
+        } else {
+        organizerInput.style.display = "none";
+        }
+        }
+        }
+
+        document.getElementById("role").addEventListener("change", toggleInputArea);
+    </script>
+
+
+</body>
+</html>

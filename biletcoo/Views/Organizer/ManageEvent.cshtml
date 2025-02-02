@@ -1,0 +1,131 @@
+@model IEnumerable<biletcoo.Models.Event>
+@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+
+
+@{
+    ViewData["Title"] = "Manage Event Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A template project for HTML CSS" />
+    <meta name="author" content="Emir Sapmaz" />
+    <title>Biletco</title>
+    <link rel="stylesheet" href="~/css/manageEvents.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <style>
+        header {
+            background-color: #006600;
+        }
+
+        .event-details .btn-div button {
+            color: #006600;
+        }
+
+        .right-header button {
+            color: #006600;
+        }
+
+        .category {
+            background-color: #006600;
+        }
+
+        select {
+            color: #006600;
+        }
+
+        #logout {
+            color: #006600;
+        }
+
+        #header-button {
+            color: #006600;
+        }
+
+        .event-table thead {
+            background-color: #006600;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a asp-controller="Organizer" asp-action="Index"><h1>Biletco</h1></a>
+        <div class="right-header">
+            <ul>
+                <li><p style="color: white; text-align: center;"><strong>Welcome @name</strong></p></li>
+                <li><button type="button" onclick="window.location.href='@Url.Action("CreateEvent", "Organizer")'">Create Event</button></li>
+                <li><button type="button" onclick="window.location.href='@Url.Action("ManageEvent", "Organizer")'">Manage Event</button></li>
+                <li><button type="button" onclick="window.location.href='@Url.Action("Logout", "Account")'" id="logout">Log out</button></li>
+            </ul>
+        </div>
+    </header>
+    @{
+                        if (@TempData["message"]!=null){
+                            <div class="config" id="configPopup">
+                                <h2 style="color:@TempData["color"]">
+                                    @TempData["message"]
+                                </h2>
+                            </div>
+                        }
+                        }
+    <table class="event-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Manage Details</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eventItem in Model)
+            {
+                <tr>
+                    <td>@eventItem.Name</td>
+                    <td>@eventItem.Location</td>
+                    <td>@eventItem.date.ToString("dd-MM-yyyy")</td> 
+                    <td>@eventItem.category</td>
+                    <td>
+                        <li style="list-style-type: none;">
+                            <a type="button" asp-route-id="@eventItem.Id"
+                               asp-controller="Organizer" 
+                               asp-action="manageEventDetail"
+                               id="header-button">Manage Event</a>
+                        </li>
+                    </td>
+                     <td class="@(eventItem.Status.ToLower())">@eventItem.Status</td> 
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
+                var configPopup = document.getElementById("configPopup");
+                if (configPopup) {
+                    configPopup.style.display = "none";
+
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+

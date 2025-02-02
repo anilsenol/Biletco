@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
+@import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+
+@font-face {
+  font-family: "Booter - Zero Zero";
+  src: url("Booter\ -\ Zero\ Zero.woff") format("woff"),
+    url("Booter\ -\ Zero\ Zero.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+.config {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+    .config h2 {
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fefefe;
+        margin: 20% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 600px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+header{
+    background-color: #0092FF;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.right-header{
+    display: flex;
+
+}
+.right-header ul{
+    display: flex;
+    list-style-type: none;  
+    justify-content: center; 
+    align-items: center;
+}
+.right-header li{
+    padding: 0px 10px;
+}
+.right-header a{
+    font-size: 1.3em;
+    color: white;
+    transition: 0.5s;
+}
+.right-header li a:hover {
+  color: rgb(122, 122, 122);
+  transition: 0.5s;
+  font-size: 1.4em;
+}
+
+.right-header button{
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    color: #0092FF;
+    transition: 0.5s;
+}
+.right-header button:hover{
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+
+header h1{
+    font-size: 6em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white;
+}
+
+
+.event-table {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.event-table thead {
+    background-color: #0092FF;
+    color: #fff;
+}
+
+.event-table th, .event-table td {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.event-table th {
+    font-size: 1.1rem;
+}
+
+
+.event-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.manage-btn {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    color: #0092FF;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+.manage-btn:hover {
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+
+
+.active {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.expired {
+    color: #4c00ff;
+    font-weight: bold;
+}
+.declined {
+    font-weight: bold;
+    color: #d81600;
+}
+.pending {
+    color: #ff8800;
+    font-weight: bold;
+}
+
+#header-button {
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px;
+    color: #0092ff;
+    font-size: 1em;
+    transition: 0.5s;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+    #header-button:hover {
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+
+#logout:hover{
+    background-color: darkred;
+    color: white;
+  }
+  
+  @media (max-width: 1000px) {
+  
+    *{
+      font-size: 15px;
+    }
+    header{
+      padding: 0px 20px;
+    }
+    .right-header li {
+      padding: 0px 7px;
+    }
+    .right-header a {
+      font-size: 1.3em;
+    }
+    header h1 {
+      margin: 0px 7px 0px 7px;
+    }
+    .category{
+      margin-bottom: 20px;
+    }
+    .right-header button {
+      padding: 7px;
+    }
+    #search{
+      width: 25vw;
+      padding: 10px;
+      padding-right: 30px;
+      font-size: 13px;
+    }
+  
+  }
+  @media (max-width: 750px) {
+  
+    *{
+      font-size: 13px;
+    }
+    header{
+      padding: 0px 10px;
+    }
+    .right-header li {
+      padding: 0px 5px;
+    }
+    header h1 {
+      margin: 0px 7px 0px 7px;
+    }
+    .category{
+      margin-bottom: 15px;
+    }
+    .right-header button {
+      padding: 7px;
+    }
+    main{
+      margin: 0px 10px 0px 10px;
+    }
+    .img img{
+      width: 300px;
+    }
+  
+  }
+  @media (max-width: 620px) {
+    *{
+      font-size: 10px;
+    }
+    .img img{
+      width: 250px;
+    }
+  }

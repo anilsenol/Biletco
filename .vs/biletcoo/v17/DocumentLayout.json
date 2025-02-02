@@ -1,0 +1,276 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\organizer\\manageevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\organizer\\manageevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\wwwroot\\css\\manageevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\wwwroot\\css\\manageevents.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\organizer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\organizer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\organizer\\createevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\organizer\\createevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\wwwroot\\css\\mainpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\wwwroot\\css\\mainpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/biletco/True/SqlTable/dbo.Events.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\organizer\\viewfulldetailsorganizer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\organizer\\viewfulldetailsorganizer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\home\\main.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\home\\main.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\views\\organizer\\manageeventdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\views\\organizer\\manageeventdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\controllers\\organizercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\viewmodel\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|c:\\users\\asus\\desktop\\dersler\\comp\\web programming\\biletcooson\\biletcoo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41A996A2-7710-4797-940D-6CB09A711626}|biletcoo\\biletcoo.csproj|solutionrelative:biletcoo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 177,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ManageEvent.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\ManageEvent.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Organizer\\ManageEvent.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\ManageEvent.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Organizer\\ManageEvent.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAwwDsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:18:04.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "manageEvents.css",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\manageEvents.css",
+              "RelativeDocumentMoniker": "biletcoo\\wwwroot\\css\\manageEvents.css",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\manageEvents.css",
+              "RelativeToolTip": "biletcoo\\wwwroot\\css\\manageEvents.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-31T22:35:37.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "viewFullDetailsOrganizer.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\viewFullDetailsOrganizer.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Organizer\\viewFullDetailsOrganizer.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\viewFullDetailsOrganizer.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Organizer\\viewFullDetailsOrganizer.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAADEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:55:06.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "manageEventDetail.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\manageEventDetail.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Organizer\\manageEventDetail.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\manageEventDetail.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Organizer\\manageEventDetail.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAD8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:55:04.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\Index.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Organizer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\Index.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Organizer\\Index.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAGAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:54:28.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateEvent.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\CreateEvent.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Organizer\\CreateEvent.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Organizer\\CreateEvent.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Organizer\\CreateEvent.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:55:02.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrganizerController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Controllers\\OrganizerController.cs",
+              "RelativeDocumentMoniker": "biletcoo\\Controllers\\OrganizerController.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Controllers\\OrganizerController.cs",
+              "RelativeToolTip": "biletcoo\\Controllers\\OrganizerController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T22:52:42.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\ViewModel\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "biletcoo\\ViewModel\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\ViewModel\\RegisterViewModel.cs",
+              "RelativeToolTip": "biletcoo\\ViewModel\\RegisterViewModel.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T22:52:30.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Program.cs",
+              "RelativeDocumentMoniker": "biletcoo\\Program.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Program.cs",
+              "RelativeToolTip": "biletcoo\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T22:50:27.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:47:44.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "biletcoo\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "biletcoo\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAALwAAAAAAAAAAAAowMwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-31T22:42:20.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPage.css",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\MainPage.css",
+              "RelativeDocumentMoniker": "biletcoo\\wwwroot\\css\\MainPage.css",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\wwwroot\\css\\MainPage.css",
+              "RelativeToolTip": "biletcoo\\wwwroot\\css\\MainPage.css",
+              "ViewState": "AgIAANoAAAAAAAAAAAAYwOEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-31T22:35:46.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Main.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Home\\Main.cshtml",
+              "RelativeDocumentMoniker": "biletcoo\\Views\\Home\\Main.cshtml",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\Dersler\\comp\\web programming\\biletcooSON\\biletcoo\\Views\\Home\\Main.cshtml",
+              "RelativeToolTip": "biletcoo\\Views\\Home\\Main.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHQAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T22:19:41.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dbo.Events [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/biletco/True/SqlTable/dbo.Events.sql",
+              "ToolTip": "dbo.Events [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-01-31T22:34:18.369Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 217,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+﻿@using biletcoo.ViewModel;
+@model LoginViewModel;
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A template project for HTML CSS" />
+    <meta name="author" content="Emir Sapmaz" />
+    <title>Biletco</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index"><h1>Biletco</h1></a>
+        <div class="right-header">
+            <ul>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <form asp-action="Login" method="post" id="loginForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="input-wrap">
+                <label asp-for="email">Email</label>
+                <input style="padding-right: 40px"
+                type="email"
+                id="email"
+                asp-for="email"
+                placeholder="Enter your email"
+                required />
+                <i class="fa-solid fa-envelope"></i>
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="input-wrap">
+                <label asp-for="password">Password</label>
+                <input style="padding-right: 40px"
+                type="password"
+                id="password"
+                asp-for="password"
+                placeholder="Enter your password"
+                required />
+                <i class="fa-solid fa-lock"></i>
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <br /><br />
+            <button class="pulse" type="submit">Login</button>
+        </form>
+        <br />
+        <a asp-controller="Account" asp-action="forgetPassword">Forget password?</a>
+    </div>
+</body>
+</html>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");
+    }
+}

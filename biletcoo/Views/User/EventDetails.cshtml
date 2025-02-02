@@ -1,0 +1,146 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using biletcoo.Models
+@model biletcoo.Models.Event
+@inject SignInManager<users> SignInManager
+@inject UserManager<users> userManager
+
+
+@{
+    ViewData["Title"] = "Event Details Page";
+    Layout = null;
+    var user = await userManager.GetUserAsync(User);
+    var name = user.FirstName;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Page</title>
+    <link rel="stylesheet" href="~/css/DetailsPage.css" asp-append-version="true" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Main"><h1>Biletco</h1></a>
+        <div class="search-container">
+            <input type="text"
+            id="search"
+            placeholder="Search by event name"
+            onkeyup="searchEvent()" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="right-header">
+            <ul>
+                <li>
+                    <p style="color: white; text-align: center;"><strong>Welcome @name</strong></p>
+                <li><a asp-controller="User" asp-action="myTickets" id="header-button">My Tickets</a></li>
+                <li><a asp-controller="User" asp-action="favouriteEvent" id="header-button">Favourite Events</a></li>
+                <li><a asp-controller="Account" asp-action="Logout" id="logout">Logout</a></li>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="image-container">
+            <img src="~/img/konser.jpg" alt="Concert" />
+        </div>
+
+        <div class="event-container">
+            <div class="event-details">
+                @{
+                    if (@TempData["message"] != null)
+                    {
+                        <div class="config" id="configPopup">
+                            <h2 style="color:@TempData["color"]">
+                                @TempData["message"]
+                            </h2>
+                        </div>
+                    }
+                }
+                @{
+
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Event Name: </h1>
+                        <span>@Model.Name</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <h1 style="display: inline;">Location: </h1>
+                        <span>@Model.Location</span>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <h1 style="display: inline;">Date: </h1>
+                        <span>@Model.date.ToString("dd.MM.yyyy")</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Category: </h1>
+                        <span>@Model.category</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Capacity: </h1>
+                        <span>@Model.capacity</span>
+                    </div>
+                    <div style=" margin-bottom: 10px;">
+                        <h1 style="display: inline;">Description: </h1>
+                        <span>@Model.Description</span>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-item">
+                            <label for="category">Category</label>
+                            <select id="category" name="category">
+                                <option value="general">General</option>
+                                
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <label for="ticket-number">Number of Tickets</label>
+                            <input id="ticket-number" type="number" min="1" value="1" />
+                        </div>
+                    </div>
+
+                    <p><strong>Price:</strong> <span id="price">@Model.price</span> TL</p>
+                    <input type="hidden" id="eventId" value="@Model.Id" />
+
+                    <form method="post" asp-controller="User" asp-action="getYourTicket">
+                        <input type="hidden" name="eventId" value="@Model.Id" />
+                        <input type="hidden" id="ticketNumberInput" name="ticketNumber" value="1" />
+                        <button type="submit" id="header-button">Get Your Ticket!</button>
+                    </form>
+                }
+            </div>
+        </div>
+
+        <script>
+            const ticketPrice = @Model.price;
+
+            const ticketInput = document.getElementById("ticket-number");
+            const priceDisplay = document.getElementById("price");
+             const ticketNumberInput = document.getElementById("ticketNumberInput");
+
+
+            ticketInput.addEventListener("input", () => {
+              ticketNumberInput.value = ticketInput.value;
+              const ticketCount = ticketInput.value;
+              const totalPrice = ticketCount * ticketPrice;
+              priceDisplay.textContent = totalPrice;
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                setTimeout(function() {
+                    var configPopup = document.getElementById("configPopup");
+                    if (configPopup) {
+                        configPopup.style.display = "none";
+                    }
+                }, 1500);
+
+            });
+        </script>
+    </main>
+</body>
+</html>
