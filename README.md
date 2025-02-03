@@ -67,7 +67,13 @@ Follow these steps to set up the project on your local environment:
 
 ## 📸 Screenshots
 
-
-
-
-  
+![Ekran görüntüsü 2025-02-01 022629](https://github.com/user-attachments/assets/ffe6f748-1399-49fb-8cec-a93770946b9b)
+![Ekran görüntüsü 2025-02-01 022737](https://github.com/user-attachments/assets/f1ae7dec-a7c8-4c6e-9cf3-8f5de5965f9e)
+![Ekran görüntüsü 2025-02-03 030859](https://github.com/user-attachments/assets/337874ce-945d-48a4-a36f-d54e5a576ff7)
+![Ekran görüntüsü 2025-02-03 043036](https://github.com/user-attachments/assets/676d6e22-a336-4058-b592-98b00aa21a1b)
+![Ekran görüntüsü 2025-02-03 035516](https://github.com/user-attachments/assets/6748cd1e-3c0c-485b-aa9a-9e9229ec1a5d)
+![Ekran görüntüsü 2025-02-03 035547](https://github.com/user-attachments/assets/500664bc-77b3-4baf-8372-66cee990a77d)
+![Ekran görüntüsü 2025-02-03 040227](https://github.com/user-attachments/assets/888f42a6-056c-4218-83cc-cd1f26b3df1f)
+![Ekran görüntüsü 2025-02-03 040544](https://github.com/user-attachments/assets/b63cf710-ffb0-4bf0-8f3c-fa5395be106e)
+![Ekran görüntüsü 2025-02-03 040555](https://github.com/user-attachments/assets/53047760-4063-4cab-8aa7-00ae02404f98)
+![Ekran görüntüsü 2025-02-03 040654](https://github.com/user-attachments/assets/484aaef3-1719-4c71-b13d-683d6395ef38)
