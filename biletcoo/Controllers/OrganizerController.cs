@@ -100,24 +100,31 @@ namespace biletcoo.Controllers
         {
             if (ModelState.IsValid)
             {
-                var updatedEvent = _context.Events.FirstOrDefault(e => e.Id == model.Id);
-                
-                updatedEvent.Name = model.Name;
-                updatedEvent.Location = model.Location;
-                updatedEvent.Description = model.Description;
-                updatedEvent.date = model.date;
-                updatedEvent.capacity = model.capacity;
-                updatedEvent.price = model.price;
-                updatedEvent.category = model.category;
-                updatedEvent.Status = "Pending";
+                if (model.date < DateTime.Today)
+                {
+                    TempData["color"] = "red";
+                    TempData["message"] = "The event date cannot be in the PAST.";
+                }
+                else
+                {
+                    var updatedEvent = _context.Events.FirstOrDefault(e => e.Id == model.Id);
 
-                _context.SaveChanges();
-                TempData["color"] = "green";
-                TempData["message"] = "You have successfully approved event!";
+                    updatedEvent.Name = model.Name;
+                    updatedEvent.Location = model.Location;
+                    updatedEvent.Description = model.Description;
+                    updatedEvent.date = model.date;
+                    updatedEvent.capacity = model.capacity;
+                    updatedEvent.price = model.price;
+                    updatedEvent.category = model.category;
+                    updatedEvent.Status = "Pending";
 
-                return RedirectToAction("ManageEvent", "Organizer", new { eventId = model.Id });
+                    _context.SaveChanges();
+                    TempData["color"] = "green";
+                    TempData["message"] = "You have successfully approved event!";
+
+                }
+                 return RedirectToAction("ManageEvent", "Organizer", new { eventId = model.Id });
             }
-
             return View(model);
         }
 

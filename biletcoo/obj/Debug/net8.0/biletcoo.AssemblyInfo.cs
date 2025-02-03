@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("biletcoo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3456eac494bd0607fd8141e72bf9ca2eadf28798")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcfb8600b5258bd1cf08a1dd6d8c7d5d701c2316")]
 [assembly: System.Reflection.AssemblyProductAttribute("biletcoo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("biletcoo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
