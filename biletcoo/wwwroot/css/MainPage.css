@@ -84,6 +84,22 @@ main {
 		cursor: pointer;
 		height: 42.5px;
 	}
+.desc {
+	max-height: 125px; /* Set the maximum height of the container */
+	overflow: hidden; /* Hide content that overflows */
+	display: flex;
+	flex-direction: column; /* Allow the content to wrap vertically */
+}
+
+	.desc p {
+		display: block; /* Block-level for paragraph */
+		overflow: hidden; /* Hide overflowing content */
+		text-overflow: ellipsis; /* Add ellipsis (...) when the content overflows */
+		white-space: normal; /* Allow text to wrap */
+		word-wrap: break-word; /* Ensure words break if they are too long */
+		max-height: 4.5em; /* Limit the height of the paragraph */
+		line-height: 1.5em; /* Ensure the line height for consistent spacing */
+	}
 
 .img img {
 	height: 100%;

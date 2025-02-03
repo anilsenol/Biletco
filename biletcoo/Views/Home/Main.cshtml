@@ -91,7 +91,9 @@
                                 </div>
                                 <div class="event-details">
                                     <h2>@Event.Name</h2>
-                                    <p>@Event.Description</p>
+                                    <div class="desc">
+                                        <p>@Event.Description</p>
+                                    </div>
                                     <div class="btn-div">
                                         <a id="header-button" asp-controller="User" asp-action="EventDetails" asp-route-eventId="@Event.Id">Event Details</a>
                                     </div>
@@ -167,7 +169,20 @@
             });
         }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var descElements = document.querySelectorAll('.desc p');
 
+            descElements.forEach(function(el) {
+                var text = el.innerText;
+                var maxHeight = parseInt(window.getComputedStyle(el).maxHeight);
+                while (el.scrollHeight > maxHeight) {
+                    text = text.substring(0, text.length - 1);
+                    el.innerText = text + "...";
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
